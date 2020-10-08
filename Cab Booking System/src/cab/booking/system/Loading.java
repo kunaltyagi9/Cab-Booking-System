@@ -59,10 +59,10 @@ public class Loading extends JFrame implements Runnable {
             setContentPane(contentPane);
             contentPane.setLayout(null);
 
-            JLabel lbllibraryManagement = new JLabel("Cab Booking System");
+            JLabel lbllibraryManagement = new JLabel("Transpo Cabs");
             lbllibraryManagement.setForeground(new Color(72, 209, 204));
             lbllibraryManagement.setFont(new Font("Trebuchet MS", Font.BOLD, 35));
-            lbllibraryManagement.setBounds(120, 46, 700, 45);
+            lbllibraryManagement.setBounds(170, 46, 700, 45);
             contentPane.add(lbllibraryManagement);
 	
             progressBar = new JProgressBar();

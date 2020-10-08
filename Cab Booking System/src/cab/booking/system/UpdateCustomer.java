@@ -42,7 +42,7 @@ public class UpdateCustomer extends JFrame {
 
 	public UpdateCustomer(String username) throws SQLException {
 		System.out.println(username);
-                setBounds(580, 220, 850, 550);
+                setBounds(500, 220, 850, 550);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
 		contentPane.setLayout(null);

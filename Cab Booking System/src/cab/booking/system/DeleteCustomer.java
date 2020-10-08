@@ -38,7 +38,7 @@ public class DeleteCustomer extends JFrame {
 	}
 
 	public DeleteCustomer() throws SQLException {
-		setBounds(580, 220, 850, 550);
+		setBounds(500, 220, 850, 550);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
 		contentPane.setLayout(null);

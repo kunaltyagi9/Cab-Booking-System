@@ -57,17 +57,17 @@ public class ViewCabs extends JFrame implements Runnable {
             Thread.sleep(2800);
             l8.setVisible(false);
             l9.setVisible(true);
-            caption.setText("E-Rickshaw");
+            caption.setText("Bike");
             l9.add(caption);
             Thread.sleep(2800);
             l9.setVisible(false);
             l10.setVisible(true);
-            caption.setText("Bike");
+            caption.setText("TATA Ace Zip");
             l10.add(caption);
             Thread.sleep(2800);
             l10.setVisible(false);
             l11.setVisible(true);
-            caption.setText("Nissan Micra");
+            caption.setText("DFM Mini Truck");
             l11.add(caption);
             Thread.sleep(2800);
             l11.setVisible(false);
@@ -81,7 +81,7 @@ public class ViewCabs extends JFrame implements Runnable {
 
     public ViewCabs() {
 
-        setBounds(580, 220, 900, 700);
+        setBounds(500, 220, 900, 700);
         getContentPane().setBackground(new Color(220, 250, 250));
         
         th = new Thread(this);
@@ -150,7 +150,7 @@ public class ViewCabs extends JFrame implements Runnable {
         add(l8);
         l8.setVisible(false);
 
-        ImageIcon i22 = new ImageIcon(ClassLoader.getSystemResource("cab/booking/system/icons/cab8.png"));
+        ImageIcon i22 = new ImageIcon(ClassLoader.getSystemResource("cab/booking/system/icons/cab9.png"));
         Image i23 = i22.getImage().getScaledInstance(650, 434, Image.SCALE_DEFAULT);
         ImageIcon i24 = new ImageIcon(i23);
         l9 = new JLabel(i24);
@@ -158,16 +158,16 @@ public class ViewCabs extends JFrame implements Runnable {
         add(l9);
         l9.setVisible(false);
 
-        ImageIcon i25 = new ImageIcon(ClassLoader.getSystemResource("cab/booking/system/icons/cab9.png"));
-        Image i26 = i25.getImage().getScaledInstance(650, 434, Image.SCALE_DEFAULT);
+        ImageIcon i25 = new ImageIcon(ClassLoader.getSystemResource("cab/booking/system/icons/truck2.png"));
+        Image i26 = i25.getImage().getScaledInstance(1200, 700, Image.SCALE_DEFAULT);
         ImageIcon i27 = new ImageIcon(i26);
         l10 = new JLabel(i27);
         l10.setBounds(0, 0, 900, 700);
         add(l10);
         l10.setVisible(false);
 
-        ImageIcon i28 = new ImageIcon(ClassLoader.getSystemResource("cab/booking/system/icons/cab1.png"));
-        Image i29 = i28.getImage().getScaledInstance(650, 434, Image.SCALE_DEFAULT);
+        ImageIcon i28 = new ImageIcon(ClassLoader.getSystemResource("cab/booking/system/icons/truck1.jpg"));
+        Image i29 = i28.getImage().getScaledInstance(900, 700, Image.SCALE_DEFAULT);
         ImageIcon i30 = new ImageIcon(i29);
         l11 = new JLabel(i30);
         l11.setBounds(0, 0, 900, 700);

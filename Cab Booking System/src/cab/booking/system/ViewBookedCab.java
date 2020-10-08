@@ -39,7 +39,7 @@ public class ViewBookedCab extends JFrame {
 	}
 
 	public ViewBookedCab(String username)  {
-		setBounds(580, 220, 1050, 600);
+		setBounds(450, 220, 1050, 600);
 		contentPane = new JPanel();
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -138,18 +138,27 @@ public class ViewBookedCab extends JFrame {
 		l10.setBounds(271, 430, 200, 14);
 		contentPane.add(l10);
                 
+                JLabel la3 = new JLabel("Reference Number :");
+		la3.setBounds(35, 470, 200, 14);
+		contentPane.add(la3);
+		
+		JLabel l11 = new JLabel();
+		l11.setBounds(271, 470, 200, 14);
+		contentPane.add(l11);
+                
                 Conn c = new Conn();
                 try{
 
-                    ResultSet rs = c.s.executeQuery("select * from intraCab where username = 'admin'");
+                    ResultSet rs = c.s.executeQuery("select * from intraCab where username = '"+username+"'");
                     while(rs.next()){
                         l2.setText(rs.getString(2));
                         l3.setText(rs.getString(3));
                         l4.setText(rs.getString(4));
                         l5.setText(rs.getString(5));
                         l9.setText(rs.getString(6));
+                        l11.setText(rs.getString(7));
                     }
-                    rs = c.s.executeQuery("select * from customer where username = 'admin'");
+                    rs = c.s.executeQuery("select * from customer where username = '"+username+"'");
                     while(rs.next()){
                         l1.setText(rs.getString("name"));
                         l6.setText(rs.getString("id_type") + " (" + rs.getString("number") + ")");
@@ -170,7 +179,7 @@ public class ViewBookedCab extends JFrame {
                             setVisible(false);
 			}
 		}); 
-		btnExit.setBounds(120, 490, 120, 30);
+		btnExit.setBounds(120, 510, 120, 30);
                 btnExit.setBackground(Color.BLACK);
                 btnExit.setForeground(Color.WHITE);
 		contentPane.add(btnExit);

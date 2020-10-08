@@ -31,10 +31,10 @@ public class Home extends JFrame{
 	NewLabel.setBounds(0, 0, 1950, 1000); 
         add(NewLabel);
         
-        JLabel l1 = new JLabel("Cab Booking System");
+        JLabel l1 = new JLabel("Transpo Cab");
 	l1.setForeground(Color.WHITE);
         l1.setFont(new Font("Tahoma", Font.PLAIN, 55));
-	l1.setBounds(700, 60, 1000, 100);
+	l1.setBounds(780, 60, 1000, 100);
 	NewLabel.add(l1);
 		
 		
@@ -91,29 +91,17 @@ public class Home extends JFrame{
         
         
 		
-	JMenu m2 = new JMenu("BOOKINGS");
+	JMenu m2 = new JMenu("BOOK INTRACITY CAB");
         m2.setForeground(Color.RED);
 	menuBar.add(m2);
         
-        JMenuItem mi6 = new JMenuItem("VIEW AVAILABLE CABS");
-	m2.add(mi6);
-        
-        JMenuItem mi7 = new JMenuItem("BOOK INTRACITY CAB");
+        JMenuItem mi7 = new JMenuItem("BOOK CAB");
 	m2.add(mi7);
         
-        JMenuItem mi5 = new JMenuItem("BOOK INTERCITY CAB");
+        JMenuItem mi5 = new JMenuItem("VIEW BOOKED CAB");
 	m2.add(mi5);
         
-        
-        mi6.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent ae){
-                try{
-                    new ViewCabs().setVisible(true);
-                }catch(Exception e ){}
-            }
-	});
-        
-
+       
         mi7.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
                 try{
@@ -133,22 +121,22 @@ public class Home extends JFrame{
 	});
         
         
-        JMenu m3 = new JMenu("HOTELS");
+        JMenu m3 = new JMenu("BOOK INTERCITY CAB");
         m3.setForeground(Color.BLUE);
 	menuBar.add(m3);
         
-        JMenuItem mi8 = new JMenuItem("BOOK HOTELS");
+        JMenuItem mi8 = new JMenuItem("VIEW CABS");
 	m3.add(mi8);
         
-        JMenuItem mi9 = new JMenuItem("VIEW HOTELS");
+        JMenuItem mi9 = new JMenuItem("BOOK CAB");
 	m3.add(mi9);
         
-        JMenuItem mi10 = new JMenuItem("VIEW BOOKED HOTEL");
+        JMenuItem mi10 = new JMenuItem("VIEW BOOKED CAB");
 	m3.add(mi10);
         
         mi8.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
-                //new BookHotel(username).setVisible(true);
+                new ViewCabs().setVisible(true);
             }
 	});
         
@@ -157,7 +145,7 @@ public class Home extends JFrame{
 	mi9.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
                 try{
-                    //new CheckHotels().setVisible(true);
+                    new BookIntercityCab(username).setVisible(true);
                 }catch(Exception e ){}
             }
 	});
@@ -165,27 +153,55 @@ public class Home extends JFrame{
         mi10.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
                 try{
-                    //new ViewBookedHotel(username).setVisible(true);
+                    new ViewInterCityBookedCab(username).setVisible(true);
                 }catch(Exception e ){}
             }
 	});
         
-        JMenu m4 = new JMenu("DESTINATION");
-        m4.setForeground(Color.RED);
-	menuBar.add(m4);
+        JMenu m8 = new JMenu("TRANSPORT");
+        m8.setForeground(Color.RED);
+	menuBar.add(m8);
         
-        JMenuItem mi11 = new JMenuItem("DESTINATION");
-	m4.add(mi11);
+        JMenuItem mi16 = new JMenuItem("BOOK PACKAGE");
+	m8.add(mi16);
         
-        mi11.addActionListener(new ActionListener(){
+        JMenuItem mi17 = new JMenuItem("VIEW BOOKED PACKAGE");
+	m8.add(mi17);
+        
+        mi16.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
-                //new Destination().setVisible(true);
+                new Trucking(username).setVisible(true);
+            }
+	});
+        
+        
+        
+	mi17.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                try{
+                    new ViewTruckingDetails(username).setVisible(true);
+                }catch(Exception e ){}
+            }
+	});
+        
+        JMenu m9 = new JMenu("BILL");
+        m9.setForeground(Color.BLUE);
+	menuBar.add(m9);
+        
+        JMenuItem mi18 = new JMenuItem("CHECK BILL");
+	m9.add(mi18);
+        
+        mi18.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                try{
+                    new CheckBill(username).setVisible(true);
+                }catch(Exception e){ }
             }
 	});
         
         
         JMenu m5 = new JMenu("PAYMENT");
-        m5.setForeground(Color.BLUE);
+        m5.setForeground(Color.RED);
 	menuBar.add(m5);
         
         JMenuItem mi12 = new JMenuItem("PAY USING PAYTM");
@@ -193,12 +209,12 @@ public class Home extends JFrame{
         
         mi12.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
-                //new Payment().setVisible(true);
+                new Payment().setVisible(true);
             }
 	});
         
         JMenu m6 = new JMenu("UTILITY");
-        m6.setForeground(Color.RED);
+        m6.setForeground(Color.BLUE);
 	menuBar.add(m6);
         
         JMenuItem mi13 = new JMenuItem("NOTEPAD");
@@ -225,7 +241,7 @@ public class Home extends JFrame{
 	});
         
         JMenu m7 = new JMenu("ABOUT");
-        m7.setForeground(Color.BLUE);
+        m7.setForeground(Color.RED);
 	menuBar.add(m7);
         
         JMenuItem mi15 = new JMenuItem("ABOUT");
@@ -233,7 +249,7 @@ public class Home extends JFrame{
         
         mi15.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent ae){
-                //new About().setVisible(true);
+                new About().setVisible(true);
             }
 	});
         

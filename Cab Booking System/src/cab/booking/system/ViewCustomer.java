@@ -51,7 +51,7 @@ public class ViewCustomer extends JFrame {
 	public ViewCustomer() throws SQLException {
 		//conn = Javaconnect.getDBConnection();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(580, 220, 900, 680);
+		setBounds(500, 220, 900, 680);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

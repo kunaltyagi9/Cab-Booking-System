@@ -9,7 +9,9 @@ package cab.booking.system;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.*;
+import java.util.Random;
 import javax.swing.*;
+import java.util.*;
 import net.proteanit.sql.DbUtils;
 
 public class BookCab extends JFrame{  //Forth
@@ -75,6 +77,19 @@ public class BookCab extends JFrame{  //Forth
             rs.close();
         }catch(SQLException e){}
         
+        JLabel l13 = new JLabel("Reference Number : ");
+	l13.setFont(new Font("Tahoma", Font.PLAIN, 19));
+	l13.setBounds(50, 150, 250, 27);
+	add(l13);
+        
+        JLabel l14 = new JLabel();
+	l14.setFont(new Font("Tahoma", Font.PLAIN, 19));
+	l14.setBounds(250, 150, 250, 27);
+	add(l14);
+        
+        Random r = new Random();
+        l14.setText(""+Math.abs(r.nextInt() % 100000));
+        
         JLabel l9 = new JLabel("Name : ");
 	l9.setFont(new Font("Tahoma", Font.PLAIN, 19));
 	l9.setBounds(50, 200, 250, 27);
@@ -118,7 +133,7 @@ public class BookCab extends JFrame{  //Forth
         
         JLabel l5 = new JLabel("Car : ");
 	l5.setFont(new Font("Tahoma", Font.PLAIN, 19));
-	l5.setBounds(50, 350, 150, 27);
+	l5.setBounds(50, 350, 250, 27);
 	add(l5);
         
         JLabel l6 = new JLabel("");
@@ -191,10 +206,13 @@ public class BookCab extends JFrame{  //Forth
                     String name = l2.getText();
                     String price = l4.getText();
                     String car = l6.getText();
+                    String ref = l14.getText();
                     
                     Conn c = new Conn();
                     
-                    String str = "insert into intraCab values('"+username+"','"+name+"','"+src+"','"+dst+"','"+car+"','"+price+"')";
+                    c.s.executeUpdate("delete from intraCab");
+                    
+                    String str = "insert into intraCab values('"+username+"','"+name+"','"+src+"','"+dst+"','"+car+"','"+price+"','"+ref+"')";
                     c.s.executeUpdate(str);
                     
                     JOptionPane.showMessageDialog(null, "Cab Booked Successfully");
@@ -221,7 +239,7 @@ public class BookCab extends JFrame{  //Forth
         
         
 	setSize(860,600);
-        setLocation(600,220);
+        setLocation(500,220);
 	setVisible(true);
 		
     }
