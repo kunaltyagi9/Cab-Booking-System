@@ -129,24 +129,19 @@ public class Signup extends JFrame implements ActionListener{
             Conn con = new Conn();
             
             if(ae.getSource() == b1){
-                String sql = "insert into account(username, name, password, question, answer) values(?, ?, ?, ?, ?)";
-		PreparedStatement st = con.c.prepareStatement(sql);
-
-		st.setString(1, textField.getText());
-                st.setString(2, textField_1.getText());
-		st.setString(3, textField_2.getText());
-		st.setString(4, (String) comboBox.getSelectedItem());
-		st.setString(5, textField_3.getText());
-
-		int i = st.executeUpdate();
-		if (i > 0){
-                    JOptionPane.showMessageDialog(null, "Account Created Successfully ");
-                }
-
-                textField.setText("");
-                textField_1.setText("");
-		textField_2.setText("");
-		textField_3.setText("");
+                
+                String username = textField.getText();
+                String name = textField_1.getText();
+		String password = textField_2.getText();
+		String question = (String) comboBox.getSelectedItem();
+		String answer = textField_3.getText();
+                
+                String sql = "insert into account values('"+username+"', '"+name+"', '"+password+"', '"+question+"', '"+answer+"')";
+		con.s.executeUpdate(sql);
+		JOptionPane.showMessageDialog(null, "Account Created Successfully ");
+                
+                new Login().setVisible(true);
+                setVisible(false);
             }
             if(ae.getSource() == b2){
                 this.setVisible(false);

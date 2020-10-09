@@ -75,10 +75,12 @@ public class Trucking extends JFrame{
             }
             
             rs = c.s.executeQuery("select * from customer where username = '"+username+"'");
-            l10.setText(rs.getString("name"));
-
-            rs.close();
-        }catch(SQLException e){}
+            while(rs.next()){
+                l10.setText(rs.getString("name"));
+            }
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
         
        
         JLabel l11 = new JLabel("Weight : ");

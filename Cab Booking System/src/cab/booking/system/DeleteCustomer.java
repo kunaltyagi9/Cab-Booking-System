@@ -63,7 +63,7 @@ public class DeleteCustomer extends JFrame {
                 Conn c = new Conn();
                 try{
 
-                    ResultSet rs = c.s.executeQuery("select * from customer");
+                    ResultSet rs = c.s.executeQuery("select * from account");
                     while(rs.next()){
                         c1.add(rs.getString("username"));
                     }
@@ -176,11 +176,16 @@ public class DeleteCustomer extends JFrame {
                             try{
 	    			String s1 = c1.getSelectedItem(); 
                                 
-                                String q1 = "update from customer where username = '"+s1+"'";
+                                String q1 = "delete from customer where username = '"+s1+"'";
+                                String q2 = "delete from account where username = '"+s1+"'";
                                 c.s.executeUpdate(q1);
+                                c.s.executeUpdate(q2);
                                 
 	    			JOptionPane.showMessageDialog(null, "Customer Detail Deleted Successfully");
                                 setVisible(false);
+                                new Home("").setVisible(false);
+                                new Login().setVisible(true);
+                                
 	    		}catch(SQLException e1){
 	    			System.out.println(e1.getMessage());
 	    		}
